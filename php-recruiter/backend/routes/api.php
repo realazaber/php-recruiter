@@ -16,6 +16,7 @@ use App\Http\Controllers\JobsController;
 */
 
 Route::resource('/jobs', JobsController::class);
+Route::get('/jobs/search/{title}', [JobsController::class, 'search']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

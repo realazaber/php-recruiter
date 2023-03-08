@@ -68,4 +68,15 @@ class JobsController extends Controller
     {
         Job::destroy($id);
     }
+
+    /**
+     * Search for the resource
+     *
+     * @param  str $title
+     * @return \Illuminate\Http\Response
+     */
+    public function search($title)
+    {
+        return Job::where('title', 'like', '%'.$title.'%')->get();
+    }
 }
