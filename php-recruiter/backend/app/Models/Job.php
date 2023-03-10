@@ -17,6 +17,7 @@ class Job extends Model
         'description',
         'salary_min',
         'salary_max',
-        'currency'
+        'currency',
+        'user_id'
     ];
 }

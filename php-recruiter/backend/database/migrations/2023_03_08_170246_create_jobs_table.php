@@ -23,6 +23,7 @@ class CreateJobsTable extends Migration
             $table->decimal('salary_min');
             $table->decimal('salary_max');
             $table->string('currency');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }
