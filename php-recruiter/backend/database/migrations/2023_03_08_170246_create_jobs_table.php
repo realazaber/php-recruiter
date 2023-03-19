@@ -16,10 +16,10 @@ class CreateJobsTable extends Migration
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('slug');
             $table->string('company_name');
             $table->string('company_logo_path');
             $table->longText('description');
+            $table->string('category');
             $table->decimal('salary_min');
             $table->decimal('salary_max');
             $table->string('currency');
