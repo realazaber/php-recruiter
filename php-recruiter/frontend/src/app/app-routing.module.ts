@@ -9,7 +9,8 @@ const routes: Routes = [
   { path: 'job', loadChildren: () => import('./pages/job/job.module').then(m => m.JobModule) },
   { path: 'contact', loadChildren: () => import('./pages/contact/contact.module').then(m => m.ContactModule) },
   { path: 'login', loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule) },
-  { path: 'register', loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterModule) }
+  { path: 'register', loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterModule) },
+  { path: 'pricing', loadChildren: () => import('./pages/pricing/pricing.module').then(m => m.PricingModule) }
 ];
 
 @NgModule({
