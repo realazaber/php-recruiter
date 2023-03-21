@@ -4,7 +4,13 @@ module.exports = {
     "./src/app/**/*",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "pri": '#ef482a',
+        "accent": '#565454'
+      }
+
+    },
   },
   plugins: [],
 }
