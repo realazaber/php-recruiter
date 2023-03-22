@@ -1,1 +1,19 @@
-<p>contact works!</p>
+<form
+  action="https://formspree.io/f/mzbqadge"
+  method="POST"
+  class="flex flex-col shadow-lg w-3/4 mx-auto p-5"
+  accept-charset="UTF-8"
+>
+  <h2 class="text-center">Contact us</h2>
+  <label for="fname">First name: *</label>
+  <input type="text" name="fname" required />
+  <label for="lname">Last name:</label>
+  <input type="text" name="lname" />
+  <label for="phone">Phone number:</label>
+  <input type="number" name="phone" />
+  <label for="email">Email: *</label>
+  <input type="email" name="email" required />
+  <label for="message">Message: *</label>
+  <textarea cols="30" rows="10" name="message" required></textarea>
+  <button type="submit" class="btn mt-3">Submit</button>
+</form>
