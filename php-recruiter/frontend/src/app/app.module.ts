@@ -13,8 +13,6 @@ import { TextAndImgComponent } from './components/text-and-img/text-and-img.comp
     AppComponent,
     NavComponent,
     FooterComponent,
-    JobPostComponent,
-    TextAndImgComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
