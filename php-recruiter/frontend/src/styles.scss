@@ -4,5 +4,50 @@
 
 
 @layer components {
+  * {
+    @apply text-accent duration-300;
 
-}
+
+
+    body {
+
+      @apply overflow-y-scroll scroll-smooth selection:bg-pri selection:text-white;
+
+      h1 {
+        @apply text-3xl;
+      }
+
+      h2 {
+        @apply text-2xl;
+      }
+
+      h3 {
+        @apply text-xl;
+      }
+
+      .btn, .btn-sec {
+        @apply py-3 px-4 rounded-md hover:drop-shadow-xl;
+      }
+
+      .btn {
+        @apply bg-pri text-white;
+      }
+
+      .btn-sec {
+        @apply text-pri bg-white border-pri border-2;
+      }
+
+      form {
+
+        label {
+          @apply pt-5;
+        }
+
+        input, textarea {
+          @apply border-b-2 border-gray-300 p-3 focus:border-pri focus:border-b-4;
+        }
+      }
+    }
+    }
+  }
+
