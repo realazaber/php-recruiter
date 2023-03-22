@@ -1,15 +1,11 @@
-<div
-  class="flex justify-center mx-auto my-3 border-2 border-pri {{
-    flexDirection
-  }} "
->
+<div class="flex justify-center items-center mx-auto my-3 {{ flexDirection }} ">
   <div class="w-1/2">
     <h3>{{ title }}</h3>
     <p class="py-3">
       {{ pgraph }}
     </p>
   </div>
-  <div class="w-1/2">
+  <div class="w-1/2 px-5 flex {{ imgDirection }}">
     <img
       src="{{ imgUrl }}"
       alt="{{ altTxt }}"

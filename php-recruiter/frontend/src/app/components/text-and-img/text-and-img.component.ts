@@ -13,6 +13,8 @@ export class TextAndImgComponent {
   @Input() txtLeft: boolean = true;
 
   flexDirection: string = "";
+  imgDirection: string = "";
+
 
   constructor() {
 
@@ -21,8 +23,10 @@ export class TextAndImgComponent {
   ngOnInit() {
     if (this.txtLeft == false) {
       this.flexDirection = "flex-row-reverse";
+      this.imgDirection = "justify-end";
     } else {
       this.flexDirection = "flex-row";
+      this.imgDirection = "justify-start";
     }
   }
 }
