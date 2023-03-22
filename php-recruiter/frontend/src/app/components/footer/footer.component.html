@@ -1,3 +1,18 @@
-<footer class="bg-[#333333] text-slate-50 text-center p-3">
-  <a href="https://www.azaber.com" target="_blank">© Azaber {{ year }}</a>
+<footer class="text-center mx-auto w-full">
+  <div class="bg-[#333333] p-5 text-slate-50 flex flex-row justify-between">
+    <a routerLink="/home">
+      <img src="/assets/images/logo.webp" class="w-24 h-24" alt="Logo" />
+    </a>
+    <div class="flex flex-col gap-3 text-slate-50 text-right">
+      <a class="hover:text-slate-400" routerLink="/home">Home</a>
+      <a class="hover:text-slate-400" routerLink="/about">About</a>
+      <a class="hover:text-slate-400" routerLink="/pricing">Pricing</a>
+      <a class="hover:text-slate-400" routerLink="/jobs">Jobs</a>
+      <a class="hover:text-slate-400" routerLink="/login">Login</a>
+      <a class="hover:text-slate-400" routerLink="/contact">Contact</a>
+    </div>
+  </div>
+  <div class="bg-[#212121] p-3 text-slate-50">
+    <a href="https://www.azaber.com" target="_blank">© Azaber {{ year }}</a>
+  </div>
 </footer>
