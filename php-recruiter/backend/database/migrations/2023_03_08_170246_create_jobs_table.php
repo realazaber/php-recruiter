@@ -17,7 +17,7 @@ class CreateJobsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('company_name');
-            $table->string('company_logo_path');
+            $table->longText('company_logo_path');
             $table->longText('description');
             $table->string('category');
             $table->decimal('salary_min');
