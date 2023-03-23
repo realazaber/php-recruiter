@@ -1,2 +1,7 @@
-<p>jobs works!</p>
-<app-job-post></app-job-post>
+<div *ngFor="let job of jobs">
+  <app-job-post
+    [title]="job.title"
+    [excerpt]="job.description"
+    [companyImg]="job.company_logo_path"
+  ></app-job-post>
+</div>
