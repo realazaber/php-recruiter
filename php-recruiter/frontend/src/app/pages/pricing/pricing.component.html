@@ -1,1 +1,43 @@
-<p>pricing works!</p>
+<h1 class="pb-10 text-5xl text-pri font-bold text-center">
+  Affordable pricing
+</h1>
+
+<div class="flex flex-row gap-3 justify-center">
+  <app-price-card
+    title="Free account"
+    [cost]="0.0"
+    idealFor="Small businesses or sole traders starting to hire staff."
+    [benefits]="[
+      'Up for 2 weeks',
+      'Up to 3 job postings',
+      'Maximum 50 applicants (per job)'
+    ]"
+  ></app-price-card>
+  <app-price-card
+    title="Premium account"
+    [cost]="15.0"
+    idealFor="Medium sized businesses looking to expand their team."
+    [benefits]="[
+      'Up for 30 days',
+      'Up to 5 job postings',
+      'Maximum 100 applicants (per job)'
+    ]"
+  ></app-price-card>
+  <app-price-card
+    title="Mega account"
+    [cost]="50.0"
+    [benefits]="[
+      'Up for as long as you want',
+      'Unlimited job postings',
+      'Unlimited applicants'
+    ]"
+    idealFor="Organizations requiring an urgent and substantial increase in their workforce."
+  ></app-price-card>
+</div>
+<p class="my-8">
+  You will only be able to upgrade your account when elibible to ensure you do
+  not pay for something you do not need. For example if you only post 2 jobs you
+  will not be able to upgrade to premium or mega.
+</p>
+
+<button routerLink="/getstarted" class="btn mx-auto">Get Started</button>
