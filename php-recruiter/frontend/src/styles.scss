@@ -39,6 +39,8 @@
 
       form {
 
+        @apply flex flex-col shadow-lg w-3/4 mx-auto p-5;
+
         label {
           @apply pt-5;
         }
