@@ -39,14 +39,21 @@
 
       form {
 
-        @apply flex flex-col shadow-lg w-3/4 mx-auto p-5;
+        @apply flex flex-col shadow-lg w-3/4 mx-auto p-5 min-w-[24rem];
+
+        h2 {
+          @apply text-center;
+        }
 
         label {
           @apply pt-5;
         }
 
-        input, textarea {
+        input, input[type="text"], input[type="number"], input[type="email"], input[type="password"], textarea {
           @apply border-b-2 border-gray-300 p-3 focus:border-pri focus:border-b-4;
+        }
+        .radio {
+          @apply checked:bg-pri checked:hover:bg-pri checked:active:bg-pri checked:focus:bg-pri focus:bg-pri focus:outline-none focus:ring-1 focus:ring-pri;
         }
       }
     }
