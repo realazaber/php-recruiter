@@ -1,0 +1,15 @@
+<div
+  class="rounded-md shadow-md hover:shadow-2xl hover:cursor-default p-5 flex-col justify-center items-center w-64 h-[21rem]"
+>
+  <h3 class="text-center">
+    {{ title }}
+  </h3>
+  <p class="text-center">${{ cost.toString() }} AUD per job posting.</p>
+  <ul class="py-3 list-none">
+    <li *ngFor="let benefit of benefits" class="flex items-center py-1">
+      <span class="inline-block h-1 w-1 bg-gray-400 mr-2"></span>
+      {{ benefit }}
+    </li>
+  </ul>
+  <p>Ideal for {{ idealFor }}</p>
+</div>
