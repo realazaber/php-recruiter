@@ -7,6 +7,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { JobPostComponent } from './components/job-post/job-post.component';
 import { TextAndImgComponent } from './components/text-and-img/text-and-img.component';
+import { PriceCardComponent } from './components/price-card/price-card.component';
 
 @NgModule({
   declarations: [
