@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { UserServiceService } from '../../services/user-service.service';
 
 @Component({
   selector: 'app-register',
@@ -7,14 +8,18 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
-
-  jobSeeker = true; // make job seeker radio button selected by default
+  constructor(private userService: UserServiceService) {}
 
   onSubmit(form: NgForm) {
-    if (form.valid && form.value.password === form.value.confirmPassword) {
-      // form is valid and passwords match, submit data to server here
-
+    if (form.valid) {
+      this.userService.createUser(form.value).subscribe(
+        response => {
+          console.log(response);
+        },
+        error => {
+          console.log(error);
+        }
+      );
     }
   }
-
 }

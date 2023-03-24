@@ -22,12 +22,13 @@ class User extends Authenticatable
     protected $fillable = [
         'fname',
         'lname',
-        'company_name',
+        'company_name', // include company_name in $fillable
         'is_recruiter',
-        'profile_url',
+        'profile_url', // include profile_url in $fillable
         'email',
         'password',
     ];
+
 
     /**
      * The attributes that should be hidden for serialization.

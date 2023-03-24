@@ -1,33 +1,35 @@
 <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
   <h2>Create account</h2>
-  <label for="fname">First name</label>
+  <label for="fname">First name <span>*</span></label>
   <input type="text" name="fname" ngModel required />
-  <label for="lname">Last name</label>
+  <label for="lname">Last name <span>*</span></label>
   <input type="text" name="lname" ngModel required />
-  <label for="email">Email</label>
+  <label for="profile_url">Profile Image URL</label>
+  <input type="text" name="profile_url" ngModel />
+  <label for="email">Email <span>*</span></label>
   <input type="email" name="email" ngModel required />
   <label for="jobSeeker">Job seeker</label>
   <input
     type="radio"
-    name="userType"
+    name="is_recruiter"
     ngModel
-    [value]="true"
-    [checked]="jobSeeker"
+    [value]="false"
     class="radio"
   />
   <label for="employer">Employer</label>
   <input
     type="radio"
-    name="userType"
+    name="is_recruiter"
     ngModel
-    [value]="false"
-    [checked]="!jobSeeker"
+    [value]="true"
     class="radio"
   />
-  <label for="password">Password</label>
+  <label for="company_name">Company name</label>
+  <input type="text" name="company_name" ngModel />
+  <label for="password">Password <span>*</span></label>
   <input type="password" name="password" ngModel required />
-  <label for="confirmPassword">Confirm password</label>
-  <input type="password" name="confirmPassword" ngModel required />
+  <label for="password_confirmation">Confirm password <span>*</span></label>
+  <input type="password" name="password_confirmation" ngModel required />
   <div
     *ngIf="registerForm.invalid && (registerForm.dirty || registerForm.touched)"
   >
@@ -41,14 +43,16 @@
     </p>
     <p
       *ngIf="
-        registerForm.controls['confirmPassword'].invalid &&
-        registerForm.controls['confirmPassword'].touched
+        registerForm.controls['password_confirmation'].invalid &&
+        registerForm.controls['password_confirmation'].touched
       "
     >
       Confirm password is required
     </p>
     <p
-      *ngIf="registerForm.value.password !== registerForm.value.confirmPassword"
+      *ngIf="
+        registerForm.value.password_confirmation !== registerForm.value.password
+      "
     >
       Passwords do not match
     </p>
@@ -58,7 +62,7 @@
     class="btn mt-3"
     [disabled]="
       !registerForm.valid ||
-      registerForm.value.password !== registerForm.value.confirmPassword
+      registerForm.value.password_confirmation !== registerForm.value.password
     "
   >
     Create account
