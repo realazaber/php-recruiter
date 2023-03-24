@@ -45,6 +45,10 @@
 
         label {
           @apply pt-5;
+
+          span {
+            @apply text-pri;
+          }
         }
 
         input, input[type="text"], input[type="number"], input[type="email"], input[type="password"], textarea {
