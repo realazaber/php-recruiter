@@ -1,7 +1,16 @@
-<div *ngFor="let job of jobs">
-  <app-job-post
-    [title]="job.title"
-    [excerpt]="job.description"
-    [companyImg]="job.company_logo_path"
-  ></app-job-post>
+<div>
+  <h2 class="text-center">Search for job</h2>
+  <form class="shadow-none flex flex-row justify-center gap-3">
+    <input type="text" name="search" placeholder="Title" />
+    <button class="btn" type="submit">Search</button>
+  </form>
+  <div *ngFor="let job of jobs">
+    <app-job-post
+      [title]="job.title"
+      [excerpt]="job.description"
+      [companyImg]="job.company_logo_path"
+      [salaryMin]="job.salary_min"
+      [salaryMax]="job.salary_max"
+    ></app-job-post>
+  </div>
 </div>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
 
 @Component({
   selector: 'app-job-post',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./job-post.component.scss']
 })
 export class JobPostComponent {
-
+ @Input() title: String = "Job title";
+ @Input() companyName: String = "Company name";
+ @Input() excerpt: String = "Excerpt";
+ @Input() companyImg: String = "/images/logo.webp";
+ @Input() salaryMin: Number = 0;
+ @Input() salaryMax: Number = 1;
 }

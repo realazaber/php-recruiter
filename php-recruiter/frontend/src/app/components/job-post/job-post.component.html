@@ -1,1 +1,11 @@
-<p>job-post works!</p>
+<div class="my-3 p-5 border-[1px] rounded-lg border-gray-300">
+  <div class="flex flex-row">
+    <div class="w-2/3 pr-5">
+      <h3>{{ title }} ${{ salaryMin }} - ${{ salaryMax }}</h3>
+      <h4 class="my-2">{{ companyName }}</h4>
+      <p>{{ excerpt }}</p>
+      <button class="btn mt-3">Apply now</button>
+    </div>
+    <img src="{{ companyImg }}" alt="{{ title }}" class="object-cover w-1/3" />
+  </div>
+</div>
