@@ -15,7 +15,6 @@ class JobsController extends Controller
     public function index()
     {
         return Job::all();
-        
     }
 
     /**
@@ -70,13 +69,17 @@ class JobsController extends Controller
     }
 
     /**
-     * Search for the resource
-     *
-     * @param  str $title
-     * @return \Illuminate\Http\Response
-     */
-    public function search($title)
-    {
-        return Job::where('title', 'like', '%'.$title.'%')->get();
-    }
+ * Search for the resource
+ *
+ * @param  string $query
+ * @return \Illuminate\Http\Response
+ */
+public function search($query)
+{
+    return Job::where('title', 'like', '%'.$query.'%')
+               ->orWhere('company_name', 'like', '%'.$query.'%')
+               ->orWhere('description', 'like', '%'.$query.'%')
+               ->get();
+}
+
 }
