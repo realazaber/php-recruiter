@@ -43,6 +43,20 @@
           @apply text-center;
         }
 
+        .row {
+          @apply flex flex-row;
+
+          .col {
+            @apply flex flex-col;
+          }
+
+          label, input {
+            @apply max-w-[40%];
+          }
+        }
+
+
+
         label {
           @apply pt-5;
 
