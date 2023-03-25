@@ -8,6 +8,6 @@ export interface Job {
   salary_min: Number;
   salary_max: Number;
   currency: String;
-  posterId: Number;
-  createdAt: Date;
+  user_id: Number;
+  created_at: Date;
 }
