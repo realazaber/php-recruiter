@@ -14,6 +14,7 @@ export class RegisterComponent {
     if (form.valid) {
       this.userService.createUser(form.value).subscribe(
         response => {
+          alert('Account created successfully!');
           console.log(response);
         },
         error => {
