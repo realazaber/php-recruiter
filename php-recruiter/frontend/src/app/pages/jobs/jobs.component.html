@@ -1,11 +1,12 @@
 <div>
   <h2 class="text-center">Search for job</h2>
   <form class="shadow-none flex flex-row justify-center gap-3">
-    <input type="text" name="search" />
+    <input type="text" name="search" required />
     <button class="btn" type="submit">Search</button>
   </form>
   <div *ngFor="let job of jobs">
     <app-job-post
+      [id]="job.id"
       [title]="job.title"
       [excerpt]="job.description"
       [companyImg]="job.company_logo_path"

@@ -1,1 +1,21 @@
-<p>job works!</p>
+<div class="flex flex-col w-full min-w-[90%]">
+  <button routerLink="/jobs" class="btn mr-auto mb-3">Back</button>
+  <div class="flex flex-row justify-between">
+    <div>
+      <h1 class="font-semibold">{{ job?.title }}</h1>
+      <h2 class="my-2">{{ job?.company_name }}</h2>
+      <h3>{{ job?.salary_min }} - {{ job?.salary_max }} {{ job?.currency }}</h3>
+      <button class="btn my-3 mx-auto">Apply now</button>
+    </div>
+    <div>
+      <img
+        class="w-36 h-36 object-cover"
+        src="{{ job?.company_logo_path }}"
+        alt="{{ job?.title }}"
+      />
+    </div>
+  </div>
+  <p>{{ job?.description }}</p>
+  <p class="py-3">Posted on {{ job?.created_at | date : "dd/MM/yyyy" }}</p>
+  <p>{{ job?.user_id }}</p>
+</div>

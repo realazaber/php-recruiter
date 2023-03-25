@@ -7,6 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./job-post.component.scss']
 })
 export class JobPostComponent {
+ @Input() id: Number = 0;
  @Input() title: String = "Job title";
  @Input() companyName: String = "Company name";
  @Input() excerpt: String = "Excerpt";

@@ -3,9 +3,14 @@
     <div class="w-2/3 pr-5">
       <h3>{{ title }} ${{ salaryMin }} - ${{ salaryMax }}</h3>
       <h4 class="my-2">{{ companyName }}</h4>
-      <p>{{ excerpt }}</p>
-      <button class="btn mt-3">Apply now</button>
+      <p>{{ excerpt.substring(0, 350) }}</p>
+      <button routerLink="/job/{{ id }}" class="btn mt-3">See more</button>
     </div>
-    <img src="{{ companyImg }}" alt="{{ title }}" class="object-cover w-1/3" />
+    <img
+      routerLink="/job/{{ id }}"
+      src="{{ companyImg }}"
+      alt="{{ title }}"
+      class="object-cover w-1/3 hover:cursor-pointer"
+    />
   </div>
 </div>

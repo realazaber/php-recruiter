@@ -16,4 +16,23 @@ export class JobServiceService {
     const url = `${this.baseUrl}/jobs`;
     return this.http.get<Job[]>(url);
   }
+
+  getJob(jobId: Number): Observable<Job> {
+    const url = `${this.baseUrl}/jobs/${jobId}`;
+    return this.http.get<Job>(url);
+  }
+
+  createJob(job: Job) {
+
+  }
+
+  editJob() {
+
+  }
+
+  deleteJob(jobId: Number) {
+
+  }
+
+
 }
