@@ -9,7 +9,7 @@
 
     body {
 
-      @apply overflow-y-scroll scroll-smooth selection:bg-pri selection:text-white;
+      @apply overflow-y-scroll scroll-smooth selection:bg-pri selection:text-white scrollbar-thin scrollbar-thumb-pri scrollbar-track-gray-300;
 
       h1 {
         @apply text-3xl;
