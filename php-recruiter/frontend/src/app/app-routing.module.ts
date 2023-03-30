@@ -12,7 +12,13 @@ const routes: Routes = [
   { path: 'register', loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterModule) },
   { path: 'pricing', loadChildren: () => import('./pages/pricing/pricing.module').then(m => m.PricingModule) },
   { path: 'employers', loadChildren: () => import('./pages/employers/employers.module').then(m => m.EmployersModule) },
-  { path: 'employer/:id', loadChildren: () => import('./pages/employer/employer.module').then(m => m.EmployerModule) }
+  { path: 'employer/:id', loadChildren: () => import('./pages/employer/employer.module').then(m => m.EmployerModule) },
+  { path: 'profile', loadChildren: () => import('./pages/auth/profile/profile.module').then(m => m.ProfileModule) },
+  { path: 'postjob', loadChildren: () => import('./pages/auth/post-job/post-job.module').then(m => m.PostJobModule) },
+  { path: 'editjob', loadChildren: () => import('./pages/auth/edit-job/edit-job.module').then(m => m.EditJobModule) },
+  { path: 'upgradeplan', loadChildren: () => import('./pages/auth/upgradeplan/upgradeplan.module').then(m => m.UpgradeplanModule) },
+  { path: 'dashboard', loadChildren: () => import('./pages/auth/dashboard/dashboard.module').then(m => m.DashboardModule) },
+  { path: 'applicants', loadChildren: () => import('./pages/auth/applicants/applicants.module').then(m => m.ApplicantsModule) }
 ];
 
 @NgModule({
