@@ -43,19 +43,21 @@
           @apply text-center;
         }
 
+        hr {
+          @apply border-[1px] border-gray-300 my-3 rounded-md;
+        }
+
         .row {
-          @apply flex flex-row;
+          @apply flex flex-row w-full justify-between gap-2;
 
           .col {
             @apply flex flex-col;
-          }
 
-          label, input {
-            @apply max-w-[40%];
+            label, input {
+              @apply w-full;
+            }
           }
         }
-
-
 
         label {
           @apply pt-5;
@@ -65,7 +67,7 @@
           }
         }
 
-        input, input[type="text"], input[type="number"], input[type="email"], input[type="password"], textarea {
+        input, input[type="text"], input[type="number"], input[type="email"], input[type="password"], textarea, select {
           @apply border-b-2 border-gray-300 p-3 focus:border-pri focus:border-b-4;
         }
         .radio {
