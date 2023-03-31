@@ -1,13 +1,13 @@
 <div class="flex flex-col w-full min-w-[90%]">
   <button routerLink="/jobs" class="btn mr-auto mb-3">Back</button>
   <div class="flex flex-row justify-between">
-    <div>
-      <h1 class="font-semibold">{{ job?.title }}</h1>
-      <h2 class="my-2">{{ job?.company_name }}</h2>
-      <h3>{{ job?.salary_min }} - {{ job?.salary_max }} {{ job?.currency }}</h3>
+    <div class="w-2/3">
+      <h1 class="font-semibold text-xl phone:text-4xl">{{ job?.title }}</h1>
+      <h2 class="my-2 text-lg phone:text-3xl">{{ job?.company_name }}</h2>
+      <h3 class="text-base phone:text-xl">{{ job?.salary_min }} - {{ job?.salary_max }} {{ job?.currency }}</h3>
       <button class="btn my-3 mx-auto">Apply now</button>
     </div>
-    <div>
+    <div class="w-1/3">
       <img
         class="w-36 h-36 object-cover"
         src="{{ job?.company_logo_path }}"

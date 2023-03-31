@@ -1,16 +1,17 @@
-<div class="my-3 p-5 border-[1px] rounded-lg border-gray-300">
-  <div class="flex flex-row">
-    <div class="w-2/3 pr-5">
-      <h3>{{ title }} ${{ salaryMin }} - ${{ salaryMax }}</h3>
+<div class="my-3 w-[90%] p-5 border-[1px] rounded-lg border-gray-300">
+  <div class="flex flex-col tablet:flex-row">
+    <div class="w-full tablet:w-2/3 p-3 tablet:pr-5">
+      <h3>{{ title }} <div class="block tablet:hidden"></div> ${{ salaryMin }} - ${{ salaryMax }}</h3>
       <h4 class="my-2">{{ companyName }}</h4>
       <p>{{ excerpt.substring(0, 350) }}</p>
-      <button routerLink="/job/{{ id }}" class="btn mt-3">See more</button>
+      <button routerLink="/job/{{ id }}" class="btn mt-3 tablet:block hidden">See more</button>
     </div>
     <img
       routerLink="/job/{{ id }}"
       src="{{ companyImg }}"
       alt="{{ title }}"
-      class="object-cover w-1/3 hover:cursor-pointer"
+      class="object-cover w-5/6 mx-auto tablet:w-1/3 hover:cursor-pointer"
     />
+    <button routerLink="/job/{{ id }}" class="btn mt-3 tablet:hidden block">See more</button>
   </div>
 </div>

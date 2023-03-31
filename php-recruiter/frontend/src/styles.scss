@@ -37,7 +37,7 @@
 
       form {
 
-        @apply flex flex-col shadow-lg w-3/4 mx-auto p-5 min-w-[90%] phone:min-w-[24rem] phone:max-w-[26rem];
+        @apply flex flex-col shadow-lg w-3/4 mx-auto p-5 min-w-[90%] w-full phone:min-w-[24rem] phone:max-w-[26rem];
 
         h2 {
           @apply text-center;
