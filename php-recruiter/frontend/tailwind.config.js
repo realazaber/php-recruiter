@@ -8,6 +8,11 @@ module.exports = {
       colors: {
         "pri": '#ef482a',
         "accent": '#565454'
+      },
+      screens: {
+        'phone': '640px',
+        'tablet': '768px',
+        'desktop': '1024px',
       }
 
     },
