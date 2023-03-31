@@ -22,10 +22,10 @@ export class TextAndImgComponent {
 
   ngOnInit() {
     if (this.txtLeft == false) {
-      this.flexDirection = "flex-row-reverse";
+      this.flexDirection = "phone:flex-row-reverse";
       this.imgDirection = "justify-end";
     } else {
-      this.flexDirection = "flex-row";
+      this.flexDirection = "phone:flex-row";
       this.imgDirection = "justify-start";
     }
   }
