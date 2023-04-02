@@ -20,12 +20,22 @@ use App\Http\Controllers\UserController;
 
 
 Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
 
 Route::resource('/jobs', JobsController::class);
-Route::resource('/users', UserController::class);
 Route::get('/jobs/search/{title}', [JobsController::class, 'search']);
+
+Route::get('/users/{userId}', [UserController::class, 'show']);
 Route::get('/employers', [UserController::class, 'employers']);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+
+
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::put('/users/edit/{userId}', [UserController::class, 'update']);
+    Route::delete('/users/delete/{id}', [UserController::class, 'destroy']);
+    Route::post('/logout', [AuthController::class, 'logout']);
+});
+
+Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
