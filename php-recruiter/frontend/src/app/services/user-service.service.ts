@@ -15,7 +15,7 @@ export class UserServiceService {
   constructor(private http: HttpClient) { }
 
   createUser(formData: FormData) {
-    return this.http.post(`${this.baseUrl}/users`, formData);
+    return this.http.post(`${this.baseUrl}/register`, formData);
   }
 
   loginUser(formData: FormData) {
