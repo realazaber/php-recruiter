@@ -1,9 +1,15 @@
 <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
   <h2>Create account</h2>
-  <label for="fname">First name <span>*</span></label>
-  <input type="text" name="fname" ngModel required />
-  <label for="lname">Last name <span>*</span></label>
-  <input type="text" name="lname" ngModel required />
+  <div class="row">
+    <div class="col">
+      <label for="fname">First name <span>*</span></label>
+      <input type="text" name="fname" ngModel required />
+    </div>
+    <div class="col">
+      <label for="lname">Last name <span>*</span></label>
+      <input type="text" name="lname" ngModel required />
+    </div>
+  </div>
   <label for="profile_url">Profile Image URL</label>
   <input type="text" name="profile_url" ngModel />
   <label for="email">Email <span>*</span></label>
@@ -26,10 +32,20 @@
   />
   <label for="company_name">Company name</label>
   <input type="text" name="company_name" ngModel />
-  <label for="password">Password <span>*</span></label>
-  <input type="password" name="password" ngModel required />
-  <label for="password_confirmation">Confirm password <span>*</span></label>
-  <input type="password" name="password_confirmation" ngModel required />
+  <label for="website">Website</label>
+  <input type="text" name="website" ngModel>
+  <label for="bio">Bio <span>*</span></label>
+  <textarea name="bio" cols="30" rows="10" ngModel></textarea>
+  <div class="row">
+    <div class="col">
+      <label for="password">Password <span>*</span></label>
+      <input type="password" name="password" ngModel required />
+    </div>
+    <div class="col">
+      <label for="password_confirmation">Confirm password <span>*</span></label>
+      <input type="password" name="password_confirmation" ngModel required />
+    </div>
+  </div>
   <div
     *ngIf="registerForm.invalid && (registerForm.dirty || registerForm.touched)"
   >

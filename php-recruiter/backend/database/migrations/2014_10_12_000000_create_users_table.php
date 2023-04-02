@@ -17,6 +17,8 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('fname');
             $table->string('lname');
+            $table->longText('bio');
+            $table->string('website')->nullable();
             $table->string('company_name')->nullable(); // make company_name nullable
             $table->boolean('is_recruiter')->default(false);
             $table->longText('profile_url')->nullable(); // make profile_url nullable

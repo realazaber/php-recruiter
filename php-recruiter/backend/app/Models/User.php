@@ -22,9 +22,11 @@ class User extends Authenticatable
     protected $fillable = [
         'fname',
         'lname',
-        'company_name', // include company_name in $fillable
+        'bio',
+        'website',
+        'company_name',
         'is_recruiter',
-        'profile_url', // include profile_url in $fillable
+        'profile_url',
         'email',
         'password',
     ];
