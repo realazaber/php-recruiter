@@ -19,8 +19,9 @@ export class UserServiceService {
   }
 
   loginUser(formData: FormData) {
-
+    return this.http.post(`${this.baseUrl}/login`, formData);
   }
+
 
   loadUser(id: Number): User | null {
     return null;

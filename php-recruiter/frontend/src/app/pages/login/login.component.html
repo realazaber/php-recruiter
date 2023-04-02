@@ -1,9 +1,9 @@
-<form method="post" class="w-80">
+<form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="w-80">
   <h2>Login</h2>
   <label for="email">Email:</label>
-  <input type="email" name="email" required />
+  <input type="email" name="email" ngModel required />
   <label for="password">Password</label>
-  <input type="password" name="password" required />
+  <input type="password" name="password" ngModel required />
   <button type="submit" class="btn mt-3">Login</button>
   <a class="mt-3" routerLink="/register">Create account</a>
 </form>
