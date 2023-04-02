@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { UserServiceService } from 'src/app/services/user-service.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +9,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  constructor(private userService: UserServiceService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   onSubmit(form: NgForm) {
     const formData = new FormData();
@@ -16,11 +17,13 @@ export class LoginComponent {
     formData.append('email', form.value.email);
     formData.append('password', form.value.password);
 
-    this.userService.loginUser(formData).subscribe(
+    this.authService.loginUser(formData).subscribe(
       (response: any) => {
         localStorage.setItem('token', response.token);
+        localStorage.setItem('user_id', response.user.id);
         // navigate to dashboard or desired route
         alert("Login success");
+        this.router.navigate(['/dashboard']);
       },
       (error) => {
         console.log(error);

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Form, NgForm } from '@angular/forms';
 import { User } from '../interfaces/User';
 
 @Injectable({
@@ -17,11 +16,6 @@ export class UserServiceService {
   createUser(formData: FormData) {
     return this.http.post(`${this.baseUrl}/register`, formData);
   }
-
-  loginUser(formData: FormData) {
-    return this.http.post(`${this.baseUrl}/login`, formData);
-  }
-
 
   loadUser(id: Number): User | null {
     return null;
