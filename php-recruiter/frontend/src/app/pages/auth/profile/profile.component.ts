@@ -11,6 +11,7 @@ export class ProfileComponent {
 
   currentUser: User = JSON.parse(localStorage.getItem('currentUser') || 'null');
   isRecruiter: Boolean = this.currentUser.is_recruiter;
+  hasWebsite: boolean = false;
 
   constructor(private authService: AuthService) {
 
@@ -18,5 +19,8 @@ export class ProfileComponent {
 
   ngOnInit() {
     this.authService.checkAuth();
+    if (this.currentUser.website != null) {
+      this.hasWebsite = true;
+    }
   }
 }
