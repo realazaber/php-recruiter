@@ -21,8 +21,6 @@ export class LoginComponent {
       (response: any) => {
         localStorage.setItem('token', response.token);
         localStorage.setItem('user_id', response.user.id);
-        // navigate to dashboard or desired route
-        alert("Login success");
         this.router.navigate(['/dashboard']);
       },
       (error) => {
