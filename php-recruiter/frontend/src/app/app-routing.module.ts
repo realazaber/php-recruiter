@@ -18,7 +18,8 @@ const routes: Routes = [
   { path: 'editjob', loadChildren: () => import('./pages/auth/edit-job/edit-job.module').then(m => m.EditJobModule) },
   { path: 'upgradeplan', loadChildren: () => import('./pages/auth/upgradeplan/upgradeplan.module').then(m => m.UpgradeplanModule) },
   { path: 'dashboard', loadChildren: () => import('./pages/auth/dashboard/dashboard.module').then(m => m.DashboardModule) },
-  { path: 'applicants', loadChildren: () => import('./pages/auth/applicants/applicants.module').then(m => m.ApplicantsModule) }
+  { path: 'applicants', loadChildren: () => import('./pages/auth/applicants/applicants.module').then(m => m.ApplicantsModule) },
+  { path: 'editprofile', loadChildren: () => import('./pages/auth/editprofile/editprofile.module').then(m => m.EditprofileModule) }
 ];
 
 @NgModule({
