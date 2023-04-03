@@ -10,7 +10,7 @@ import { UserServiceService } from 'src/app/services/user-service.service';
 })
 export class DashboardComponent implements OnInit {
 
-  currentUser: User = JSON.parse(localStorage.getItem('currentUser') || 'null');
+  currentUser: User | null = JSON.parse(localStorage.getItem('currentUser') || 'null');
 
   constructor(private authService: AuthService, private userService: UserServiceService) {}
 
