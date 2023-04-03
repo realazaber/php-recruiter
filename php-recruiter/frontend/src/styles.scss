@@ -24,7 +24,7 @@
       }
 
       .btn, .btn-sec {
-        @apply py-3 px-4 rounded-md hover:drop-shadow-lg;
+        @apply py-3 px-4 rounded-md hover:drop-shadow-lg hover:cursor-pointer;
       }
 
       .btn {
