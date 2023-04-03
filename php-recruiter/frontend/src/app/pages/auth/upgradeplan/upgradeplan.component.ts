@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-upgradeplan',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./upgradeplan.component.scss']
 })
 export class UpgradeplanComponent {
+  constructor(private authService: AuthService) {
 
+  }
+
+  ngOnInit() {
+    this.authService.checkAuth();
+  }
 }

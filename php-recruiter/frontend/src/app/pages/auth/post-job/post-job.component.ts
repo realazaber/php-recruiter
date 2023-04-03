@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-post-job',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class PostJobComponent {
 
+  constructor(private authService: AuthService) {
+
+  }
+
+  ngOnInit() {
+    this.authService.checkAuth();
+  }
 }
