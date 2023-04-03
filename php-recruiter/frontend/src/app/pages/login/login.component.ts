@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { User } from 'src/app/interfaces/User';
+import { UserServiceService } from 'src/app/services/user-service.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +11,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  constructor(private authService: AuthService, private router: Router) {}
+
+  currentUser: User | null = null;
+
+
+  constructor(private authService: AuthService, private userService: UserServiceService, private router: Router) {}
 
   onSubmit(form: NgForm) {
     const formData = new FormData();
@@ -21,6 +27,15 @@ export class LoginComponent {
       (response: any) => {
         localStorage.setItem('token', response.token);
         localStorage.setItem('user_id', response.user.id);
+        this.userService.loadUser(response.user.id).subscribe(
+          (user: User) => {
+            this.currentUser = user;
+            localStorage.setItem('currentUser', JSON.stringify(user));
+          },
+          (error) => {
+            console.error(error);
+          })
+
         this.router.navigate(['/dashboard']);
       },
       (error) => {

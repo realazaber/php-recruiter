@@ -10,25 +10,12 @@ import { UserServiceService } from 'src/app/services/user-service.service';
 })
 export class DashboardComponent implements OnInit {
 
-  currentUser: User | null = null;
-  currentUserId: number | null = 0;
+  currentUser: User = JSON.parse(localStorage.getItem('currentUser') || 'null');
 
   constructor(private authService: AuthService, private userService: UserServiceService) {}
 
   ngOnInit() {
     this.authService.checkAuth();
-    if (localStorage.getItem('currentUser') != null) {
-      this.currentUserId = parseInt(localStorage.getItem('user_id') || '0');
-      this.userService.loadUser(this.currentUserId).subscribe(
-      (user: User) => {
-        this.currentUser = user;
-        localStorage.setItem('currentUser', JSON.stringify(user));
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
-    }
   }
 
   logout() {
