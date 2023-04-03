@@ -22,7 +22,7 @@ use App\Http\Controllers\UserController;
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
-Route::resource('/jobs', JobsController::class);
+Route::get('/jobs', [JobsController::class, 'index']);
 Route::get('/jobs/search/{title}', [JobsController::class, 'search']);
 
 Route::get('/users/{userId}', [UserController::class, 'show']);
@@ -31,8 +31,14 @@ Route::get('/employers', [UserController::class, 'employers']);
 
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
+
+    Route::post('/jobs', [JobsController::class, 'store']);
+    Route::put('/jobs/edit/{jobId}', [JobsController::class, 'update']);
+    Route::destroy('/jobs/delete/{jobId}', [JobsController::class, 'destroy']);
+
     Route::put('/users/edit/{userId}', [UserController::class, 'update']);
     Route::delete('/users/delete/{id}', [UserController::class, 'destroy']);
+
     Route::post('/logout', [AuthController::class, 'logout']);
 });
 
