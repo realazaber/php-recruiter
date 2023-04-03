@@ -26,7 +26,6 @@ export class LoginComponent {
     this.authService.loginUser(formData).subscribe(
       (response: any) => {
         localStorage.setItem('token', response.token);
-        localStorage.setItem('user_id', response.user.id);
         this.userService.loadUser(response.user.id).subscribe(
           (user: User) => {
             this.currentUser = user;
